@@ -69,7 +69,7 @@ class EventModel
         $stmt->bindParam(':category_id', $category_id, PDO::PARAM_INT);
         $stmt->execute();
 
-        $events = $stmt->fetch(PDO::FETCH_ASSOC);
+        $events = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         if(!$events) {
             http_response_code(404);
